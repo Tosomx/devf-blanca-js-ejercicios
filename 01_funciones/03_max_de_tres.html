@@ -24,10 +24,29 @@
             el div "#resultado".
            */
 
-          // Tu código acá!
-        }
 
-        // Pega tu función "max" acá:
+             var n1 = document.querySelector("#numero1").value;
+             var n2 = document.querySelector("#numero2").value;
+             var n3 = document.querySelector("#numero3").value;
+             var maximo = max(n1, n2);
+             maximo = max(maximo, n3);
+
+             var resultado = document.querySelector("#resultado");
+             resultado.innerHTML = "Max: " + maximo;
+           }
+
+
+        function max(numero1, numero2) {
+          //ambito o scope
+          var maximo;
+          if (numero1 > numero2){
+            maximo = numero1;
+          } else  {
+            maximo = numero2;
+          }
+
+          return maximo;
+        }
 
     </script>
   </body>
