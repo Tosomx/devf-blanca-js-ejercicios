@@ -29,8 +29,26 @@
               edad inscrito está suficientemente grande para tomar alcohol en
               el país seleccionado. (MX: 18, US: 21, CU: 16)
            */
+           if (edad)
+        var edad_target
 
-          // Tu código acá!
+        if (pais == "MX") {edad_target = 18;
+      }
+      else if (pais == "US") {
+        edad_target = 21;
+      }
+      else if (pais == "CU") {
+        edad_target = 16;
+      } else {
+        alert("Por favor, selecciona un país");
+        return;
+      }
+
+      if (edad >= edad_target) {
+        alert("Puedes entrar al antro.");}
+        else {
+        alert("Regrésate a tu casa!")
+      }
         }
     </script>
   </body>
