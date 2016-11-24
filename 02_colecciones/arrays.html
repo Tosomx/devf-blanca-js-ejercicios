@@ -18,10 +18,12 @@
 
     <button onclick="jugar();"> Jugar </button>
 
+
   <div id="resultado"></div>
 
   <script>
     function jugar() {
+
     var items = ["piedra", "papel", "tijeras"];
     //               0   ,    1   ,     2
     var seleccion_maquina = items[1];
@@ -55,6 +57,7 @@
     function dibujar(valor){
     document.querySelector("#resultado").innerHTML = valor;
     }
+
   </script>
 </body>
 </html>
