@@ -23,9 +23,20 @@
               (3) Muestra "FizzBuzz" cada vez que el número sea divisible por
                   los dos 3 y 5.
            */
-          
+
           for (var i = 0; i <= max; i++) {
-            print(i, true);
+            var resultado = "";
+            if ((i % 3) == 0) {
+              resultado += "Fizz"
+            }
+            if (!(i % 5)) {
+              resultado += "Buzz"
+            }
+            if (resultado) {
+              print(resultado, true);
+            } else {
+              print(i, true);
+            }
           }
         }
         // ******************************************
