@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arreglos</title>
+  <link rel="stylesheet" href="../_recursos/main.css">
+</head>
+<body>
+  <h1> Arreglos </h1>
+
+  <label for="seleccion">Escoge tu arma: </label>
+  <select name="seleccion" id="seleccion">
+
+    <option value="piedra"> Piedra </option>
+    <option value="papel"> Papel </option>
+    <option value="tijeras"> Tijeras </option>
+    </select>
+
+    <button onclick="jugar();"> Jugar </button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function jugar() {
+    var items = ["piedra", "papel", "tijeras"];
+    //               0   ,    1   ,     2
+    var seleccion_maquina = maquina_escoge(items); //items[0];
+    var seleccion_jugador = document.querySelector("#seleccion").value;
+
+    var reglas = {
+      piedra: {papel:"tú pierdes", tijeras: "tú ganas"},
+      papel: {tijeras: "tú pierdes", piedra: "tú ganas"},
+      tijeras: {piedra: "tú pierdes", papel: "tú ganas"},
+    };
+
+    var ganador = definir_ganador(seleccion_jugador, seleccion_maquina, reglas);
+    dibujar ("La maquina escogió: " + seleccion_maquina + ", por lo tanto: " + ganador);
+    }
+    function definir_ganador(s_jugador, s_maquina, reglas){
+      if (s_maquina == s_jugador){
+        return "¡es empate!";
+      }
+      var regla = reglas[s_jugador];
+      return regla[s_maquina];
+
+    }
+
+      function maquina_escoge(items){
+        var n_random = Math.floor (Math.random() * 3);
+        return items[n_random]
+        //Math.random
+        //Math.round / Math.floor / Math.ceil / Math.trunc
+      }
+
+
+//       if (s_maquina == "piedra" && s_jugador == "papel"){
+  //        resultado = "¡Ganaste!";
+    //    } else if (s_maquina == "piedra" && s_jugador == "tijeras") {
+    //      resultado = "¡Perdiste!";
+    //    } else if (s_maquina = "papel" && s_jugador == "tijeras") {
+    //      resultado = "¡Ganaste!";
+    //    } else if (s_maquina = "papel" && s_jugador == "piedra"){
+    //      resultado = "¡Perdiste!";
+    //    } else if (s_maquina = "tijeras" && s_jugador == "papel"){
+
+      //    resultado = "¡Perdiste!";
+        //} else if (s_maquina = "tijeras" && s_jugador == "piedra"){
+          //resultado = "¡Ganaste!";
+    //    }
+      // return resultado;
+
+
+    function dibujar(valor){
+    document.querySelector("#resultado").innerHTML = valor;
+    }
+  </script>
+</body>
+</html>
