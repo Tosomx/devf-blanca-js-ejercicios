@@ -24,7 +24,7 @@
                   los dos 3 y 5.
            */
 
-          for (var i = 0; i <= max; i++) {
+      /*    for (var i = 0; i <= max; i++) {
             var resultado = "";
             if ((i % 3) == 0) {
               resultado += "Fizz"
@@ -39,6 +39,21 @@
             }
           }
         }
+        */
+      for(var i = 0; i <= max; i++) {
+      if((i % 3 == 0) && (i % 5 == 0)){
+        print("FizzBuzz");
+      }  else if(i % 3 == 0){
+        print("Fizz");
+      }  else if(i % 5 == 0){
+        print("Buzz");
+      }  else{
+        print("");
+      }
+
+    }
+
+
         // ******************************************
         // No hay que cambiar nada de acá para abajo.
         // ******************************************
