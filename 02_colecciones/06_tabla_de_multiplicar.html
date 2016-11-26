@@ -16,11 +16,41 @@
     <script>
 
         function dibujar_tabla() {
+          var minimo = parseInt(document.querySelector("#minimo").value);
+          var maximo = parseInt(document.querySelector("#maximo").value);
+          var resultado = document.querySelector("#resultado");
+
+          var html = "table";
+
+          //Fila header
+
+          html += "<td><tr></td>"
+          for (var i = minimo; i <= maximo; i++){
+            html += "<td class = 'tableheader'>" + i + "</td>";
+          }
+          html += "</tr>"
+
+          //cuerpo
+          for (var i =minimo; i <=maximo; i++){
+            console.log("Fila nueva!");
+            html += "<tr><td class='tableheader'>" + i + "</td>";
+            for (j =minimo; j <=maximo; j++){
+              console.log("Celda nueva!");
+              html += "<td>" + i*j + "</td>";
+          }
+          console.log("Cerrando la fila");
+          html += "</tr>";
+          }
+
+          html += "</table>";
+
+          resultado.innerHTML = html;
+        }
           /*
             Ejercicio: Leer minimo y maximo de la pagina, y dibujar una
             tabla con los productos de todos los numeros entre minimo y maximo.
            */
-        }
+
 
     </script>
   </body>
